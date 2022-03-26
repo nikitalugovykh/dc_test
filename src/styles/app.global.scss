@@ -1,0 +1,59 @@
+/*
+=============================
+Reset
+=============================
+*/
+
+@import "reset";
+
+/*
+=============================
+Typography
+=============================
+*/
+
+@import "fonts";
+
+/*
+=============================
+Body
+=============================
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root
+// #root > div 
+{
+    height: 100%;
+}
+
+body {
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    line-height: 1.4;
+    // color: $color-font-color;
+    background-color: #f2f4f6;
+}
+
+input,
+button {
+    font-family: "Nunito Sans";
+    font-size: 14px;
+    line-height: 16px;
+    // color: $color-font-color;
+}
+
+a {
+    // color: $color-font-color;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
