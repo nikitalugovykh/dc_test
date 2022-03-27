@@ -26,6 +26,13 @@ export const appSlice = createSlice({
         addColor: (state, action: PayloadAction<ColorType>) => {
             state.colors = [...state.colors, action.payload]
         },
+        updateColor: (state, action: PayloadAction<ColorType>) => {
+            const color = state.colors.find((color) => color.id === action.payload.id)
+            if (color) {
+                color.color = action.payload.color
+            }
+        },
+
         removeColor: (state, action: PayloadAction<number>) => {
             state.colors = state.colors.filter(color => color.id !== action.payload)
         }
@@ -39,7 +46,8 @@ export const appSlice = createSlice({
 
 export const {
     addColor,
-    removeColor
+    removeColor,
+    updateColor
 } = appSlice.actions
 
 

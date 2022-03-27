@@ -1,4 +1,5 @@
+import { RgbaColor } from 'react-colorful';
 export type ColorType = {
     id: number,
-    color: string
+    color: RgbaColor
 }

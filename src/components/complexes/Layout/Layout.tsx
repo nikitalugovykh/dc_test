@@ -15,6 +15,8 @@ type Props = {
 const Layout: FC<Props> = ({ loading = false, children }) => {
     const dispatch = useAppDispatch()
 
+
+
     return (
         <div className={styles.wrapper}>
             <header className={styles.header}>
@@ -23,14 +25,7 @@ const Layout: FC<Props> = ({ loading = false, children }) => {
                         <MenuItem route={routes.home} title={'Форма'} />
                         <MenuItem route={routes.palette} title={'Палитра'} />
                     </ul>
-
-
-
-
                 </nav>
-
-
-
             </header>
             <main>
                 <Outlet />

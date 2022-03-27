@@ -1,7 +1,19 @@
 @import "./../../../styles/config.scss";
 
 .wrapper {
+    width: 100%;
+}
+.wrapper > div{
+    width: 100%;
+}
 
+.wrapper > div > div:first-child{
+    height: 100px;
+}
+.wrapper > div:first-child > div > div > div{
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
 }
 
 .hueWrapper {

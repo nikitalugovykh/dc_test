@@ -1,5 +1,7 @@
 @import "../../../styles/config";
 
 .wrapper {
-   
+    width: 343px;
+    //    height: calc(100vh - 86px)
+    height: calc(100vh - 86px - 46px - 80px);
 }

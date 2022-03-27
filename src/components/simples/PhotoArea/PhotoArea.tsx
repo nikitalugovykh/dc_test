@@ -19,6 +19,10 @@ const PhotoArea: FC<Props> = (
 ) => {
 
 
+    const [drag, setDrag] = useState<boolean>(false)
+
+
+
     const onChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>) => {
         // ev.target.files && console.log(URL.createObjectURL(ev.target.files[0]))
         ev.target.files && onChange(ev.target.files[0])
