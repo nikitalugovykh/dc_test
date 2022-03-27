@@ -1,4 +1,4 @@
-import React, { FC, useContext, useMemo } from "react"
+import React, { FC } from "react"
 import { useAppSelector } from "../../../hooks/store"
 import { ColorsItem } from "../ColorsItem"
 import styles from "./ColorsWrapper.module.scss"
@@ -15,12 +15,11 @@ const ColorsWrapper: FC<Props> = ({}) => {
             {colors.map((item) => (
                 <ColorsItem 
                     color = {item} 
-                    key = {item.id}
-                    
+                    key = {item.id}  
                 />
             ))}
         </div>
     )
 }
 
-export default ColorsWrapper
+export default React.memo(ColorsWrapper)

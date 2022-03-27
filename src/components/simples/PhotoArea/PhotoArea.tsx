@@ -1,4 +1,4 @@
-import { CSSProperties, FC, SyntheticEvent, useState } from 'react'
+import { FC } from 'react'
 import { ReactComponent as AddIcon } from './../../../assets/images/add_photo.svg'
 import styles from './PhotoArea.module.scss'
 
@@ -6,29 +6,26 @@ import styles from './PhotoArea.module.scss'
 type Props = {
     label: string,
     onChange: (photo: any) => void,
-    photo: any
+    photo: any,
+    error: boolean,
+    errorText: string
 }
-
 
 const PhotoArea: FC<Props> = (
     {
         label,
         onChange,
-        photo
+        photo,
+        error,
+        errorText
     }
 ) => {
-
-
-    const [drag, setDrag] = useState<boolean>(false)
-
-
 
     const onChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>) => {
         // ev.target.files && console.log(URL.createObjectURL(ev.target.files[0]))
         ev.target.files && onChange(ev.target.files[0])
 
     }
-
 
     return (
         <div className={styles.wrapper}>
@@ -41,11 +38,10 @@ const PhotoArea: FC<Props> = (
             <div className={styles.inputWrapper}>
                 <input
                     className={styles.input}
+                    accept='.png, .jpg, .jpeg image/*'
                     name="input"
                     type='file'
                     onChange={onChangeHandler}
-                    accept='.png, .jpg, .jpeg image/*'
-
                 />
                 <div className={styles.imgWrapper}>
                     {
@@ -57,7 +53,23 @@ const PhotoArea: FC<Props> = (
                     }
                 </div>
             </div>
+            <div
+                className={styles.textErrorWrapper}
+                style={error && errorText !== ''
+                    ? { transform: 'translateY(5px)', opacity: 1, visibility: 'visible' }
+                    : { transform: 'translateY(-50px)', opacity: 0, visibility: 'hidden' }
+                }
+            >
+                <span className={styles.textError}>
+                    {errorText}
+                </span>
+            </div>
+
         </div>
+
+
+
+
     )
 }
 

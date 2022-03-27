@@ -1,16 +1,12 @@
-import React, {useEffect} from "react"
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom"
-import styles from "./App.module.scss"
+import { Route, Routes} from "react-router-dom"
 import {routes} from "../../constants/config"
 import { Layout } from "../complexes/Layout"
 import { FormPage } from "../pages/FormPage"
 import { PalettePage } from "../pages/PalettePage"
 
+import styles from "./App.module.scss"
 
 const App = () => {
-  
-
-
     return (
         <Routes>
             

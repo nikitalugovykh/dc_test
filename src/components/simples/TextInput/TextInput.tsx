@@ -9,7 +9,6 @@ type Props = {
     required: boolean,
     error?: boolean,
     errorText?: string,
-    onSubmit: () => void,
     classes?: {
         root?: CSSProperties
     }
@@ -24,12 +23,11 @@ const TextInput: FC<Props> = (
         required = false,
         error,
         errorText,
-        onSubmit,
         classes
     }
 ) => {
 
-    const onChangeHandler = (ev: any) => {
+    const onChangeHandler = (ev: React.ChangeEvent<HTMLInputElement>) => {
         onChange(ev.target.value)
     }
 
@@ -40,25 +38,27 @@ const TextInput: FC<Props> = (
 
                 <input
                     className={styles.input}
-                    style = {classes?.root}
+                    style={classes?.root}
                     value={value}
                     onChange={onChangeHandler}
                     type={'text'}
                     name="input"
                     required={required}
-                    onSubmit={onSubmit}
                 />
             </div>
             <div
                 className={styles.textErrorWrapper}
                 style={error && errorText !== ''
                     ?
-                    { transform: 'translateY(5px)', opacity: 1, visibility: 'visible' }
-                    : { transform: 'translateY(-200px)', opacity: 0, visibility: 'hidden' }
+                    { transform: 'translateY(0px)', opacity: 1, visibility: 'visible' }
+                    : { transform: 'translateY(-50px)', opacity: 0, visibility: 'hidden' }
                 }
             >
-                <span 
-                className={styles.textError}>{errorText}</span>
+                <span
+                    className={styles.textError}
+                >
+                    {errorText}
+                </span>
             </div>
         </div>
     )

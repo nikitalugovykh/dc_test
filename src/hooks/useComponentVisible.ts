@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
+/**
+     * @useComponentVisible хук помогающий отслеживать, где пользователь нажал мышкой, нужен для исчезновения colorPicker
+     */
+
 export default function useComponentVisible(initialIsVisible: boolean) {
     const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
     const ref = useRef<any>(null);

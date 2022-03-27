@@ -15,6 +15,10 @@ const MenuItem: FC<Props> = ({route, title}) => {
 
     let resolved = useResolvedPath(route)
 
+    /**
+     * @useMatch хук позволяет отпределить активную вкладку навинации
+     */
+
     let match = useMatch({ path: resolved.pathname, end: true })
 
 
@@ -35,4 +39,4 @@ const MenuItem: FC<Props> = ({route, title}) => {
     )
 }
 
-export default MenuItem
+export default React.memo(MenuItem)

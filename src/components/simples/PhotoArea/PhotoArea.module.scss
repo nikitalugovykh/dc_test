@@ -1,7 +1,7 @@
 @import "./../../../styles/config.scss";
 
 .wrapper {
-    &:hover .label {
+    &:hover .labelInput {
         color: $color-white;
     }
 }
@@ -25,6 +25,14 @@
 
     text-overflow: ellipsis;
 }
+.textError {
+    
+    font-size: 12px;
+    // line-height: 130%;
+    white-space: nowrap;
+    color: #fe7d80;
+    
+}
 .imgWrapper {
     position: absolute;
     top: 0;
@@ -39,11 +47,13 @@
     align-items: center;
     cursor: pointer;
 }
+
 .inputWrapper {
     margin-top: 8px;
     width: 122px;
     height: 86px;
     position: relative;
+
 }
 .input {
     width: 100%;
@@ -51,6 +61,7 @@
     opacity: 0;
     position: absolute;
     z-index: 2;
+    cursor: pointer;
 }
 .img {
     object-fit: cover;

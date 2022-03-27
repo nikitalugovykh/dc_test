@@ -1,5 +1,4 @@
-import React, { FC, useState } from "react"
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { FC } from "react"
 import { Outlet } from "react-router-dom"
 import { routes } from "../../../constants/config"
 import { useAppDispatch } from "../../../hooks/store"
@@ -7,15 +6,11 @@ import { MenuItem } from "../../simples/MunuItem"
 import styles from "./Layout.module.scss"
 
 type Props = {
-    loading?: boolean
-    children?: any
+
 }
 
 
-const Layout: FC<Props> = ({ loading = false, children }) => {
-    const dispatch = useAppDispatch()
-
-
+const Layout: FC<Props> = () => {
 
     return (
         <div className={styles.wrapper}>

@@ -22,7 +22,14 @@ type Props = {
 const PalettePage: FC<Props> = () => {
     const dispatch = useAppDispatch()
 
+    /**
+     * @currentColorId id активного цветового кубика, у которого изменяется цвет при помощи colorPiker  
+     */
     const [currentColorId, setCurrentColorId] = useState<number>(0)
+
+    /**
+     * @useComponentVisible хук помогающий отслеживать, где пользователь нажал мышкой, нужен для исчезновения colorPicker
+     */
 
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
@@ -32,6 +39,7 @@ const PalettePage: FC<Props> = () => {
 
     const onClickHandler = () => {
 
+        // формируем каждому цвету уникальный id
         const id = new Date().getTime()
 
         setCurrentColorId(id)

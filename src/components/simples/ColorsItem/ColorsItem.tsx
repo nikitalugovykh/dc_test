@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useCallback, useContext } from "react"
+import React, { CSSProperties, FC, useCallback, useContext, useMemo } from "react"
 import { convertRgba } from "../../../constants/helper"
 import { CurrentColorContext } from "../../../contexts/currentColorContext"
 import { useAppDispatch, useAppSelector } from "../../../hooks/store"
@@ -12,7 +12,6 @@ type Props = {
 }
 const ColorsItem: FC<Props> = ({color}) => {
     const dispatch = useAppDispatch()
-    const colors = useAppSelector(state => state.app.colors)
     const [currentColorId, setCurrentColorId] = useContext(CurrentColorContext)
 
     const removeClickHandler = useCallback((ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -20,6 +19,10 @@ const ColorsItem: FC<Props> = ({color}) => {
         
         dispatch(removeColor(color.id))
     }, [color])
+
+    const rgbaColor = useMemo(() => {
+        return convertRgba(color.color)
+    }, [color.color])
 
 
     const onClickChangeHandler = useCallback(() => {
@@ -30,15 +33,14 @@ const ColorsItem: FC<Props> = ({color}) => {
         <div 
             onClick={onClickChangeHandler}
             className={styles.colorItem} 
-            style = {{backgroundColor: `${convertRgba(color.color)}`}}
-        
+            style = {{backgroundColor: rgbaColor}}
         >
             <div className = {styles.removeBtn} onClick = {removeClickHandler}/>
         </div>
     )
 }
 
-export default ColorsItem
+export default React.memo(ColorsItem)
 
 
 
