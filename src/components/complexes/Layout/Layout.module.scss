@@ -1,5 +1,19 @@
 @import "../../../styles/config";
 
 .wrapper {
-  
+    max-width: 1440px;
+    margin: 0 auto;
+    // height: calc(100vh - 86px);
+    background-color: $color-background;
+    border-radius: 28px;
+    padding: 40px;
 }
+.ul {
+    display: flex;
+    gap: 38px;
+    margin-left: 10px;
+}
+.header {
+    margin-bottom: 24px;
+}
+

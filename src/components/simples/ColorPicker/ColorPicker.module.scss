@@ -1,0 +1,20 @@
+@import "./../../../styles/config.scss";
+
+.wrapper {
+
+}
+
+.hueWrapper {
+    height: 10px;
+    width: 343px;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.saturationWrapper {
+    width: 343px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+}

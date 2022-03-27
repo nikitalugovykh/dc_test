@@ -1,0 +1,23 @@
+@import "./../../../styles/config.scss";
+
+.wrapper {
+}
+.label {
+    color: $color-font-gray;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: -0.408px;
+}
+.contentWrapper {
+    margin-top: 5px;
+    padding: 10px;
+    background: rgba(118, 118, 128, 0.24);
+    border-radius: 10px;
+    width: 100%;
+    min-height: 120px;
+}
+.text {
+    color: #fff;
+    word-wrap: break-word
+}

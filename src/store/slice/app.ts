@@ -1,13 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { ColorType } from '../../types/types'
 import { RootState } from '../index'
 
 /**
  * Начальное состояние редьюсера Auth/
  */
 
-export const initialState = {
-    
-    
+type StateAppType = {
+    colors: ColorType[]
+}
+
+export const initialState: StateAppType = {
+    colors: []
 }
 
 
@@ -19,9 +23,14 @@ export const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
-       
+        addColor: (state, action: PayloadAction<ColorType>) => {
+            state.colors = [...state.colors, action.payload]
+        },
+        removeColor: (state, action: PayloadAction<number>) => {
+            state.colors = state.colors.filter(color => color.id !== action.payload)
+        }
     },
-  
+
 })
 
 
@@ -29,7 +38,8 @@ export const appSlice = createSlice({
 
 
 export const {
- 
+    addColor,
+    removeColor
 } = appSlice.actions
 
 

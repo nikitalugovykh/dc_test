@@ -1,5 +1,7 @@
 import React, {FC, useState} from "react"
-import {useAppDispatch} from "../../../hooks/store"
+import {useAppDispatch, useAppSelector} from "../../../hooks/store"
+import { ColorPicker } from "../../simples/ColorPicker"
+import { ColorsWrapper } from "../../simples/ColorsWrapper"
 import styles from "./PalettePage.module.scss"
 
 type Props = {
@@ -13,11 +15,8 @@ const PalettePage: FC<Props> = ({loading = false, children}) => {
 
     return (
         <div className={styles.wrapper}>
-           <div>
-               <p>
-                   это PalettePage
-               </p>
-           </div>
+           <ColorsWrapper/>
+           <ColorPicker/>
            
         </div>
     )

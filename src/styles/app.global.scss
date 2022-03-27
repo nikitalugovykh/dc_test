@@ -1,3 +1,4 @@
+@import "./config";
 /*
 =============================
 Reset
@@ -29,31 +30,24 @@ body,
 #root
 // #root > div 
 {
-    height: 100%;
+    // height: 100%;
+    
 }
 
 body {
-    font-family: "Nunito Sans";
+    font-family: "Gotham_Regular";
     font-size: 14px;
     line-height: 1.4;
-    // color: $color-font-color;
-    background-color: #f2f4f6;
+    color: $color-white;
+    margin: 43px;
+    background-color: $color-background-layout;
 }
+
 
 input,
 button {
-    font-family: "Nunito Sans";
+    font-family: "Gotham_Regular";
     font-size: 14px;
     line-height: 16px;
-    // color: $color-font-color;
 }
 
-a {
-    // color: $color-font-color;
-}
-
-.container {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
